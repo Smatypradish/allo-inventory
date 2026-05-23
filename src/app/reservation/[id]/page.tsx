@@ -99,7 +99,7 @@ function CountdownTimer({
           cy="70"
           r="56"
           fill="none"
-          stroke="rgba(42, 42, 58, 0.5)"
+          stroke="rgba(0, 0, 0, 0.08)"
           strokeWidth="8"
         />
         {/* Progress circle */}
@@ -305,7 +305,7 @@ export default function ReservationPage({
       <header
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(10, 10, 15, 0.8)",
+          background: "rgba(255, 255, 255, 0.8)",
           backdropFilter: "blur(20px)",
           position: "sticky",
           top: 0,

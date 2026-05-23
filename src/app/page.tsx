@@ -308,7 +308,7 @@ function ProductCard({
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              background: "rgba(42, 42, 58, 0.3)",
+              background: "rgba(0, 0, 0, 0.04)",
               border: "1px solid var(--border)",
               borderRadius: 10,
               padding: "10px 16px",
@@ -344,9 +344,9 @@ function ProductCard({
                     alignItems: "center",
                     justifyContent: "space-between",
                     padding: "10px 14px",
-                    background: "rgba(42, 42, 58, 0.2)",
+                    background: "rgba(0, 0, 0, 0.02)",
                     borderRadius: 10,
-                    border: "1px solid rgba(42, 42, 58, 0.3)",
+                    border: "1px solid rgba(0, 0, 0, 0.05)",
                   }}
                 >
                   <div style={{ flex: 1 }}>
@@ -458,7 +458,7 @@ export default function HomePage() {
       <header
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(10, 10, 15, 0.8)",
+          background: "rgba(255, 255, 255, 0.8)",
           backdropFilter: "blur(20px)",
           position: "sticky",
           top: 0,
