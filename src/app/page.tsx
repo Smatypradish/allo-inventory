@@ -419,7 +419,11 @@ export default function HomePage() {
     try {
       const res = await fetch("/api/products");
       const data = await res.json();
-      setProducts(data);
+      if (res.ok && Array.isArray(data)) {
+        setProducts(data);
+      } else {
+        toast.error(data.error || "Failed to load products");
+      }
     } catch {
       toast.error("Failed to load products");
     } finally {

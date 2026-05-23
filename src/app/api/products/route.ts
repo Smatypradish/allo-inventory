@@ -15,21 +15,39 @@ export async function GET() {
     });
 
     if (expiredReservations.length > 0) {
-      // Release expired reservations in a transaction
-      await prisma.$transaction(async (tx) => {
-        for (const reservation of expiredReservations) {
-          await tx.reservation.update({
-            where: { id: reservation.id },
-            data: { status: "RELEASED" },
+      // Group inventory decrements by product-warehouse combination
+      const inventoryUpdates = new Map<string, { productId: string; warehouseId: string; quantity: number }>();
+      for (const r of expiredReservations) {
+        const key = `${r.productId}_${r.warehouseId}`;
+        const existing = inventoryUpdates.get(key);
+        if (existing) {
+          existing.quantity += r.quantity;
+        } else {
+          inventoryUpdates.set(key, {
+            productId: r.productId,
+            warehouseId: r.warehouseId,
+            quantity: r.quantity,
           });
+        }
+      }
 
+      // Release expired reservations and update inventory in a transaction
+      await prisma.$transaction(async (tx) => {
+        // Bulk update all expired reservations to RELEASED
+        await tx.reservation.updateMany({
+          where: { id: { in: expiredReservations.map((r) => r.id) } },
+          data: { status: "RELEASED" },
+        });
+
+        // Update the inventory for each unique product-warehouse pair
+        for (const update of inventoryUpdates.values()) {
           await tx.inventory.updateMany({
             where: {
-              productId: reservation.productId,
-              warehouseId: reservation.warehouseId,
+              productId: update.productId,
+              warehouseId: update.warehouseId,
             },
             data: {
-              reserved: { decrement: reservation.quantity },
+              reserved: { decrement: update.quantity },
             },
           });
         }
