@@ -8,6 +8,36 @@ A concurrency-safe inventory reservation system for multi-warehouse fulfillment.
 
 ---
 
+## Architecture
+
+```mermaid
+flowchart TD
+    User(["👤 User / Browser"])
+
+    subgraph Vercel ["▲ Vercel (Edge)"]
+        UI["Next.js Frontend\nProduct Listing · Checkout"]
+        API["Next.js API Routes\n/api/products\n/api/reservations\n/api/warehouses"]
+        CRON["Cron Job\n/api/cron/expire-reservations\nRuns daily at midnight"]
+    end
+
+    subgraph Neon ["🐘 Neon (PostgreSQL)"]
+        DB[("Database\nProduct · Inventory\nWarehouse · Reservation")]
+    end
+
+    subgraph Upstash ["⚡ Upstash (Redis)"]
+        REDIS[("Redis Cache\nIdempotency Keys\n24h TTL")]
+    end
+
+    User -->|"HTTP Request"| UI
+    UI -->|"fetch()"| API
+    API -->|"SELECT FOR UPDATE\nPrisma ORM"| DB
+    API -->|"Idempotency Check"| REDIS
+    CRON -->|"Bulk release expired\nreservations"| DB
+    API -.->|"Lazy expiry on\nevery GET /products"| DB
+```
+
+---
+
 ## Tech Stack
 
 | Layer | Tech |
