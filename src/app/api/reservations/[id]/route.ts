@@ -38,6 +38,9 @@ export async function GET(
           },
           data: { reserved: { decrement: reservation.quantity } },
         });
+      }, {
+        maxWait: 15000,
+        timeout: 20000,
       });
 
       return NextResponse.json({

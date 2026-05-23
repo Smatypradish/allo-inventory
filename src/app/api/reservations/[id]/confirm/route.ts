@@ -62,6 +62,9 @@ export async function POST(
           },
           data: { reserved: { decrement: reservation.quantity } },
         });
+      }, {
+        maxWait: 15000,
+        timeout: 20000,
       });
 
       const responseBody = {
@@ -92,6 +95,9 @@ export async function POST(
       });
 
       return updated;
+    }, {
+      maxWait: 15000,
+      timeout: 20000,
     });
 
     const responseBody = {

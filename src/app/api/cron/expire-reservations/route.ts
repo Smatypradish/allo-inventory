@@ -68,6 +68,9 @@ export async function GET(request: NextRequest) {
           },
         });
       }
+    }, {
+      maxWait: 15000,
+      timeout: 20000,
     });
 
     return NextResponse.json({

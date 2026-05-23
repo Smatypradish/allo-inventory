@@ -90,6 +90,9 @@ export async function POST(request: NextRequest) {
       });
 
       return { success: true, reservation };
+    }, {
+      maxWait: 15000,
+      timeout: 20000,
     });
 
     // --- Build response ---

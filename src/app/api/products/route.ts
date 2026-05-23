@@ -51,6 +51,9 @@ export async function GET() {
             },
           });
         }
+      }, {
+        maxWait: 15000,
+        timeout: 20000,
       });
     }
 
