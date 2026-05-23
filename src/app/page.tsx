@@ -240,17 +240,8 @@ function ProductCard({
         }}
       >
         {/* Product image */}
-        <div
-          style={{
-            height: 180,
-            background: `linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1))`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
+        {/* Product image */}
+        <div className="product-image-container">
           <div
             style={{
               position: "absolute",
@@ -263,17 +254,27 @@ function ProductCard({
               {totalAvailable > 0 ? `${totalAvailable} available` : "Out of stock"}
             </span>
           </div>
-          <Package size={64} style={{ color: "var(--primary)", opacity: 0.4 }} />
-          <Box
-            size={32}
-            style={{
-              color: "var(--accent)",
-              opacity: 0.3,
-              position: "absolute",
-              bottom: 20,
-              right: 30,
-            }}
-          />
+          {product.imageUrl ? (
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="product-image-img"
+            />
+          ) : (
+            <>
+              <Package size={64} style={{ color: "var(--primary)", opacity: 0.4 }} />
+              <Box
+                size={32}
+                style={{
+                  color: "var(--accent)",
+                  opacity: 0.3,
+                  position: "absolute",
+                  bottom: 20,
+                  right: 30,
+                }}
+              />
+            </>
+          )}
         </div>
 
         {/* Product info */}

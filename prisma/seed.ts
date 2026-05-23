@@ -44,7 +44,7 @@ async function main() {
           "A comprehensive wellness kit with essential health supplements and monitoring tools for daily well-being.",
         price: 999,
         sku: "WK-001",
-        imageUrl: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Wellness+Kit",
+        imageUrl: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80",
       },
     }),
     prisma.product.create({
@@ -54,7 +54,7 @@ async function main() {
           "Premium health pack featuring curated vitamins, minerals, and probiotics for optimal health.",
         price: 1499,
         sku: "HP-002",
-        imageUrl: "https://placehold.co/400x300/059669/FFFFFF?text=Health+Pack",
+        imageUrl: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80",
       },
     }),
     prisma.product.create({
@@ -64,7 +64,7 @@ async function main() {
           "Essential care bundle with personal hygiene products and skincare essentials.",
         price: 749,
         sku: "CB-003",
-        imageUrl: "https://placehold.co/400x300/DC2626/FFFFFF?text=Care+Bundle",
+        imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
       },
     }),
     prisma.product.create({
@@ -74,7 +74,7 @@ async function main() {
           "Our top-tier premium set with advanced health monitoring devices and supplements.",
         price: 2199,
         sku: "PS-004",
-        imageUrl: "https://placehold.co/400x300/7C3AED/FFFFFF?text=Premium+Set",
+        imageUrl: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80",
       },
     }),
     prisma.product.create({
@@ -84,7 +84,7 @@ async function main() {
           "Budget-friendly essentials box with must-have health and wellness products.",
         price: 599,
         sku: "EB-005",
-        imageUrl: "https://placehold.co/400x300/EA580C/FFFFFF?text=Essential+Box",
+        imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
       },
     }),
   ]);
