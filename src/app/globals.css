@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #040407;
+  --background: #13111C;
   --foreground: #f2f2f7;
   --card: rgba(16, 16, 24, 0.7);
   --card-hover: rgba(24, 24, 37, 0.85);
