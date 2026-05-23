@@ -17,7 +17,7 @@ flowchart TD
     subgraph Vercel ["▲ Vercel (Edge)"]
         UI["Next.js Frontend\nProduct Listing · Checkout"]
         API["Next.js API Routes\n/api/products\n/api/reservations\n/api/warehouses"]
-        CRON["Cron Job\n/api/cron/expire-reservations\nRuns daily at midnight"]
+        CRON["Cron Job\n/api/cron/expire-reservations\nRuns every 1 minute"]
     end
 
     subgraph Neon ["🐘 Neon (PostgreSQL)"]
