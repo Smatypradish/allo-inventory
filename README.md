@@ -4,7 +4,7 @@ A concurrency-safe inventory reservation system for multi-warehouse fulfillment.
 
 > Built for Allo Health Engineering take-home exercise.
 
-🔗 **Live:** _(Add your Vercel URL here)_
+🔗 **Live:** [https://allo-inventory-eight-lac.vercel.app](https://allo-inventory-eight-lac.vercel.app)
 
 ---
 
