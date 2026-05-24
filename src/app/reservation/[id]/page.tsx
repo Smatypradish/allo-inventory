@@ -322,22 +322,21 @@ export default function ReservationPage({
             alignItems: "center",
           }}
         >
-          <button
-            className="btn-outline"
-            onClick={() => router.push("/")}
-            style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px" }}
-          >
-            <ArrowLeft size={16} />
-            Products
-          </button>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div>
+              <h1 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.03em", color: "#111827" }}>
+                allo<span style={{ color: "#7c3ade" }}>health</span>
+              </h1>
+            </div>
+          </div>
 
           {/* Navigation Links in Center */}
           <nav style={{ display: "flex", alignItems: "center", gap: 28, margin: "0 auto" }}>
             <a
-              href="#"
+              href="/"
               style={{
-                color: "var(--muted)",
-                fontWeight: 500,
+                color: "var(--foreground)",
+                fontWeight: 600,
                 fontSize: 14,
                 textDecoration: "none",
                 transition: "color 0.2s ease",
@@ -346,48 +345,9 @@ export default function ReservationPage({
             >
               Products
             </a>
-            <a
-              href="#"
-              style={{
-                color: "var(--muted)",
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-                transition: "color 0.2s ease",
-              }}
-              className="nav-link"
-            >
-              Warehouses
-            </a>
-            <a
-              href="#"
-              style={{
-                color: "var(--muted)",
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: "none",
-                transition: "color 0.2s ease",
-              }}
-              className="nav-link"
-            >
-              My Reservations
-            </a>
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div
-              style={{
-                width: 36,
-                height: 36,
-                borderRadius: 10,
-                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Package size={18} color="white" />
-            </div>
-            <span style={{ fontWeight: 700, fontSize: 16 }}>Checkout</span>
+            <span style={{ fontWeight: 700, fontSize: 16, color: "#111827" }}>Checkout</span>
           </div>
         </div>
       </header>
