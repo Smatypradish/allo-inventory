@@ -534,18 +534,21 @@ export default function HomePage() {
               value: totalProducts,
               icon: <Package size={20} />,
               color: "var(--primary)",
+              bgGradient: "linear-gradient(135deg, #ffffff 50%, rgba(124, 58, 237, 0.04) 100%)",
             },
             {
               label: "Available Stock",
               value: totalStock.toLocaleString(),
               icon: <TrendingUp size={20} />,
               color: "var(--success)",
+              bgGradient: "linear-gradient(135deg, #ffffff 50%, rgba(16, 185, 129, 0.04) 100%)",
             },
             {
               label: "Warehouses",
               value: totalWarehouses,
               icon: <Warehouse size={20} />,
               color: "var(--accent)",
+              bgGradient: "linear-gradient(135deg, #ffffff 50%, rgba(219, 39, 119, 0.04) 100%)",
             },
           ].map((stat) => (
             <div
@@ -556,6 +559,7 @@ export default function HomePage() {
                 display: "flex",
                 alignItems: "center",
                 gap: 16,
+                background: stat.bgGradient,
               }}
             >
               <div
