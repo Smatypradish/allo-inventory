@@ -457,7 +457,7 @@ export default function HomePage() {
       {/* Header */}
       <header
         style={{
-          borderBottom: "1px solid var(--border)",
+          borderBottom: "1px solid #e5e7eb",
           background: "rgba(255, 255, 255, 0.8)",
           backdropFilter: "blur(20px)",
           position: "sticky",
@@ -498,6 +498,49 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
+          {/* Navigation Links in Center */}
+          <nav style={{ display: "flex", alignItems: "center", gap: 28, margin: "0 auto" }}>
+            <a
+              href="#"
+              style={{
+                color: "var(--foreground)",
+                fontWeight: 600,
+                fontSize: 14,
+                textDecoration: "none",
+                transition: "color 0.2s ease",
+              }}
+              className="nav-link"
+            >
+              Products
+            </a>
+            <a
+              href="#"
+              style={{
+                color: "var(--muted)",
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+                transition: "color 0.2s ease",
+              }}
+              className="nav-link"
+            >
+              Warehouses
+            </a>
+            <a
+              href="#"
+              style={{
+                color: "var(--muted)",
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: "none",
+                transition: "color 0.2s ease",
+              }}
+              className="nav-link"
+            >
+              My Reservations
+            </a>
+          </nav>
 
           <button
             className="btn-outline"
